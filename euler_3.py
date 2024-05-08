@@ -16,7 +16,7 @@ def find_prime_factor(n):
     divisor = 2
 
     while divisor <= upper_limit:
-        if n % divisor == 0:
+        if n % divisor == 0: # performance MUCH better if this is checked first. Limits number of checks on whether a number is prime
             if is_prime(divisor):
                 prime_factors.append(divisor)
                 quotient = n / divisor
@@ -24,7 +24,7 @@ def find_prime_factor(n):
                     prime_factors.append(math.floor(quotient))
                 print('{} by {} found'.format(divisor, math.floor(quotient)))    
         divisor += 1
-
+    print(prime_factors)
     return prime_factors    
 
-print(find_prime_factor(600851475143))
+print(max(find_prime_factor(600851475143)))
