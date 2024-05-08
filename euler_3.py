@@ -16,9 +16,8 @@ def find_prime_factor(n):
     divisor = 2
 
     while divisor <= upper_limit:
-        if is_prime(divisor):
-        #    print('dividing by {}'.format(divisor))
-            if n % divisor == 0:
+        if n % divisor == 0:
+            if is_prime(divisor):
                 prime_factors.append(divisor)
                 quotient = n / divisor
                 if is_prime(quotient):
@@ -29,7 +28,3 @@ def find_prime_factor(n):
     return prime_factors    
 
 print(find_prime_factor(600851475143))
-
-#print(find_prime_factor(34))
-
-#print(is_prime(25))
